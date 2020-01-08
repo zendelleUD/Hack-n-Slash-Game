@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Character/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Character/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Maytch 16px 8-Directional Character Pack/spr_character.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Player" index="0" instance=ExtResource( 1 )]
+position = Vector2( 544, 288 )
+script = ExtResource( 2 )
+speed = 200
+
+[node name="Body" parent="." index="0"]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 34, 1, 11, 16 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
