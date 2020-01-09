@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Projectile/Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Projectile/PlayerProjectile.gd" type="Script" id=2]
+[ext_resource path="res://Assets/fantasy_weapons_pack1_noglow.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.85965
+height = 12.4198
+
+[node name="PlayerProjectile" instance=ExtResource( 1 )]
+position = Vector2( 401.081, 278.142 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+speed = 750
+damage = 20
+lifetime = 0.5
+
+[node name="Sprite" parent="." index="0"]
+rotation = -0.785398
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 259, 37, 25, 22 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0.838387, -0.518311 )
+rotation = 1.5708
+shape = SubResource( 1 )

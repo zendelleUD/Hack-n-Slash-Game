@@ -57,6 +57,13 @@ ui_down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Enivronment"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="Projectile"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal health_changed
 signal dead
+signal shoot
 
 export (PackedScene) var Projectile
 export (int) var speed
@@ -18,6 +19,15 @@ func _ready():
 
 func control(delta):
 	pass
+
+func shoot():
+	if can_shoot:
+		can_shoot = false
+		$Weapon_Cooldown.start()
+#		var dir = Vector2().rotated($Body.global_rotation)
+		var dir = Vector2().rotated($Weapon.global_rotation)
+		emit_signal('shoot', Projectile, $Weapon/equipment.global_position, dir)
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not alive:

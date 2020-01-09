@@ -3,6 +3,7 @@ extends "res://Character/Character.gd"
 func control(delta):
 	
 	$Body.look_at(get_global_mouse_position())
+	$Weapon.look_at(get_global_mouse_position())
 	velocity = Vector2()
 #	if Input.is_action_pressed("ui_right"):
 #		velocity = Vector2(speed,0)
@@ -21,4 +22,10 @@ func control(delta):
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
-		
+	if Input.is_action_pressed("ui_select"):
+		print("shot")
+		shoot()
+	
+
+func _on_Player_shoot():
+	pass # Replace with function body.
