@@ -28,6 +28,7 @@ shape = SubResource( 1 )
 
 [node name="Weapon" parent="." index="2"]
 position = Vector2( 0.162354, 3.80096 )
+rotation = -0.785398
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 5 )
 centered = false

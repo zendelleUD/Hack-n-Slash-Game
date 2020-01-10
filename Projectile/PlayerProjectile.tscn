@@ -6,23 +6,24 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.85965
-height = 12.4198
+height = 9.13031
 
 [node name="PlayerProjectile" instance=ExtResource( 1 )]
 position = Vector2( 401.081, 278.142 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 speed = 750
 damage = 20
-lifetime = 0.5
+lifetime = 1.0
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 8.81238, 0.172852 )
 rotation = -0.785398
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 259, 37, 25, 22 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0.838387, -0.518311 )
+position = Vector2( 10.8603, -0.518311 )
 rotation = 1.5708
 shape = SubResource( 1 )
