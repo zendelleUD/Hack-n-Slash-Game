@@ -17,3 +17,4 @@ __meta__ = {
 [node name="equipment" type="Position2D" parent="Weapon"]
 
 [node name="Weapon_Cooldown" type="Timer" parent="."]
+[connection signal="timeout" from="Weapon_Cooldown" to="." method="_on_Weapon_Cooldown_timeout"]

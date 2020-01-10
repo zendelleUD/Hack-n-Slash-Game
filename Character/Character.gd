@@ -22,9 +22,10 @@ func control(delta):
 
 func shoot():
 	if can_shoot:
-#		can_shoot = false
-		print("shooting")
+		can_shoot = false
 		$Weapon_Cooldown.start()
+		print($Weapon_Cooldown.time_left)
+		can_shoot = $Weapon_Cooldown.is_stopped()
 		var dir = Vector2(1,0).rotated($Weapon/equipment.global_rotation)
 		emit_signal('shoot', Projectile, $Weapon/equipment.global_position, dir)
 		
@@ -35,5 +36,5 @@ func _process(delta):
 	control(delta)
 	move_and_collide(velocity * speed * delta)
 	
-func on_Weapon_Cooldown_Timer():
+func _on_Weapon_Cooldown_timeout():
 	can_shoot = true
